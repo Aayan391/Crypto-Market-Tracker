@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital@1&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>About</title>
+    <style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-raleway: "Raleway", sans-serif;
+    --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+    --font-urbanist: "Urbanist", sans-serif;
+}
+
+:root {
+    --page-bg: #ffffff;
+    --text-color: #0f172a;
+    --card-bg: #f1f5f9;
+}
+
+.dark {
+    --page-bg: #020617;
+    --text-color: #ffffff;
+    --card-bg: #1e293b;
+}
+
+@media (max-width: 350px) {
+    .watchlist-label {
+        display: none;
+    }
+}
+</style>
+</head>
+<body class="bg-[var(--page-bg)] text-[var(--text-color)]">
+  <!--Header-->
+ <div class="header sticky top-0 z-50"></div>   
+ <!--banner-->
+ <main class="w-full relative overflow-hidden max-[640px]:h-120">
+    <img src="images/Crypto Market Rise with Bitcoin Coin.png" alt="" class="w-full h-112.5 max-[640px]:h-120 max-[640px]:object-[40%_center] object-cover">
+    <div class="w-[70%]  absolute  top-[20%] left-[3%] z-10  max-[640px]:w-[94%] max-[640px]:top-[15%] ">
+      <h2 class="text-[#0e2346] font-bold text-4xl  w-[50%] max-[640px]:w-[48%] max-[640px]:text-xl">Making crypto data easier to understand.</h2>  
+      <p class="text-[#627ba3] w-[50%] max-[640px]:w-[48%] max-[640px]:text-sm py-2.5">Track live Cryptocurrency prices,market trends and build your own watchlists-all in one place</p>
+      <div class="mt-5 flex gap-5 max-[640px]:flex-col max-[640px]:gap-3 max-[640px]:mt-3 ">
+        <button class="bg-[#0374fc] w-45 text-white flex gap-3 items-center py-2.5 px-2.5 rounded-[20px] font-bold max-[640px]:w-40 max-[640px]:text-sm "><i class="fa-solid fa-arrow-trend-up"></i> <a href="index.html">Explore Market</a></button>
+     <button class="bg-white text-[#0374fc] flex gap-3 items-center w-45 py-2.5 px-2.5 border border-blue-500 rounded-[5px] font-semibold  max-[640px]:w-40 max-[640px]:text-sm"><i class="fa-solid fa-eye"></i><a href="watchlist.html">View Watchlist</a></button>
+      </div>
+    </div>
+
+ </main>
+ <!--live information-->
+  <section class="w-full  mt-7.5 py-4">
+  <div class="max-w-330 lg:flex lg:flex-row max-[640px]:flex-col  sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 justify-center gap-5">
+    <div class="flex lg:flex-row  max-[767px]:flex-col md:flex-col items-center gap-3 basis-[20%] max-[640px]:py-2.5">
+      <i class="fa-solid fa-coins text-[#298dfb] text-3xl"></i>
+      <div class="flex flex-col gap-2 items-center">
+        <h4 class="text-[#298dfb] font-bold text-2xl">20+</h4>
+        <p class="text-[#7086af] text-xl font-semibold">Coins Tracked</p>
+      </div>
+    </div>
+     <div class="flex lg:flex-row  max-[767px]:flex-col md:flex-col items-center gap-3 basis-[20%] max-[640px]:py-2.5">
+     <i class="fa-solid fa-tower-broadcast text-[#298dfb] text-3xl"></i>
+      <div class="flex flex-col gap-2 items-center">
+        <h4 class="text-[#298dfb] font-bold text-2xl">Live</h4>
+        <p class="text-[#7086af] text-xl font-semibold">Market Data</p>
+      </div>
+    </div>
+     <div class="flex lg:flex-row  max-[767px]:flex-col md:flex-col items-center gap-3 basis-[20%] max-[640px]:py-2.5">
+     <i class="fa-solid fa-arrow-trend-up text-[#298dfb] text-3xl"></i>
+      <div class="flex flex-col gap-2 items-center">
+        <h4 class="text-[#298dfb] font-bold text-2xl">24h</h4>
+        <p class="text-[#7086af] text-xl font-semibold">Price Changes</p>
+      </div>
+    </div>
+     <div class="flex lg:flex-row  max-[767px]:flex-col md:flex-col items-center gap-3 basis-[20%] max-[640px]:py-2.5">
+    <i class="fa-solid fa-circle-user text-[#298dfb] text-3xl"></i>
+      <div class="flex flex-col gap-2 items-center">
+        <h4 class="text-[#298dfb] font-bold text-2xl">Personal</h4>
+        <p class="text-[#7086af] text-xl font-semibold">Watchlist</p>
+      </div>
+    </div>
+  </div>
+
+ </section>
+ <!--card-->
+ <section class="w-full mt-10 ">
+  <h2 class="text-center text-[#11275f] text-2xl font-bold font-raleway dark:text-white">Everything you need to follow the market</h2>
+  <p class="text-center text-[rgb(109,131,162)] text-xl font-semibold font-urbanist dark:text-white">Poweful features,real time data and clean interface— designed for crypto enthusiasts</p>
+<div class="max-w-330 lg:flex lg:flex-row max-[640px]:flex-col flex max-[640px]:gap-y-4 sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 justify-center gap-4 mt-4 mx-auto px-2.5">
+  <div class="basis-[25%] shadow-[0px_0px_30px_#ccc] border border-[#e0effe] px-2.5 py-2.5 rounded-[20px]">
+       <i class="fa-solid fa-arrow-trend-up w-50 bg-[#e5f2fd] py-2.5  rounded-[50%] text-3xl text-blue-500"></i>
+       <h4 class="text-xl py-1.25 font-bold font-raleway">Live Prices</h4>
+       <p class=" text-xl font-urbanist">Get real time prices and market changes for all major cryptocurrencies</p>
+  </div>
+
+  <div class="basis-[25%] shadow_[0px_0px_30px_#ccc] border border-[#e0effe] px-2.5 py-2.5 rounded-[20px]">
+      <i class="fa-regular fa-star bg-[#e5f2fd] py-2.5  rounded-[50%] text-3xl text-blue-500"></i>
+       <h4 class="text-xl py-1.25 font-bold font-raleway">Live Prices</h4>
+       <p class=" text-xl font-urbanist">Get real time prices and market changes for all major cryptocurrencies</p>
+  </div>
+   <div class="basis-[25%] shadow_[0px_0px_30px_#ccc] border border-[#e0effe] px-2.5 py-2.5 rounded-[20px]">
+     <i class="fa-regular fa-lightbulb bg-[#e5f2fd] py-2.5  rounded-[50%] text-3xl text-blue-500"></i>
+       <h4 class="text-xl py-1.25 font-bold font-raleway">Live Prices</h4>
+       <p class=" text-xl font-urbanist">Get real time prices and market changes for all major cryptocurrencies</p>
+  </div>
+   <div class="basis-[25%] shadow_[0px_0px_30px_#ccc] border border-[#e0effe] px-2.5 py-2.5 rounded-[20px]">
+    <i class="fa-solid fa-display bg-[#e5f2fd] py-2.5  rounded-[50%] text-3xl text-blue-500"></i>
+       <h4 class="text-xl py-1.25 font-bold font-raleway">Live Prices</h4>
+       <p class=" text-xl font-urbanist">Get real time prices and market changes for all major cryptocurrencies</p>
+  </div>
+  
+
+
+
+</div>
+ </section>
+  <div class="footer"></div>  
+</body>
+<script src="/components/header.js"></script>
+<script src="/components/footer.js"></script>
+</html>

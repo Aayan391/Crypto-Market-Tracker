@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital@1&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Watchlist</title>
+    <style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-raleway: "Raleway", sans-serif;
+    --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+    --font-urbanist: "Urbanist", sans-serif;
+}
+
+:root {
+    --page-bg: #ffffff;
+    --text-color: #0f172a;
+    --card-bg: #f1f5f9;
+}
+
+.dark {
+    --page-bg: #020617;
+    --text-color: #ffffff;
+    --card-bg: #1e293b;
+}
+
+@media (max-width: 350px) {
+    .watchlist-label {
+        display: none;
+    }
+}
+</style>
+</head>
+<body class="bg-[var(--page-bg)] text-[var(--text-color)]">
+    <!--header-->
+    <div class="header sticky top-0 z-50 bg-[#0b2441]"></div>
+
+<main class="mx-auto px-0 py-8">
+
+    <div class="flex justify-between items-center mb-6">
+        <div class="mx-auto">
+            <h1 class="text-3xl font-bold   text-center font-raleway">My Watchlist</h1>
+            <p class="text-slate-500 mt-2 font-bold font-urbanist  text-center">
+                Your saved cryptocurrencies
+            </p>
+        </div>
+    </div>
+<!--table section-->
+    <div class="w-full  overflow-x-auto">
+        <table class="w-full  text-left border-collapse mt-5">
+          <thead class="bg-slate-400 dark:bg-slate-800">
+            <tr>
+                <th class="px-5 py-4">#</th>
+                <th  class="px-5 py-4 sticky left-0 z-20 bg-slate-400 dark:bg-slate-800">Coin</th>
+                <th class="px-5 py-4">Price</th>
+                <th class="px-5 py-4 whitespace-nowrap">24 Change</th>
+                <th class="px-5 py-4">Market Cap</th>
+               <th class="px-5 py-4">Action</th>
+              
+            </tr>
+          </thead> 
+
+            <tbody id="watchlistTable" class="mt-20">
+            </tbody>
+
+        </table>
+    </div>
+
+    <p id="emptyWatchlist"
+       class="hidden text-center py-10 text-slate-500">
+        Your watchlist is empty. Add coins using the ☆ button on Home.
+    </p>
+
+</main>
+<div class="footer"></div>
+
+</body>
+<script src="/components/header.js"></script>
+<script src="/components/footer.js"></script>
+<script src="watchlist.js"></script>
+</html>

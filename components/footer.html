@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital@1&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Footer</title>
+    <style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-raleway: "Raleway", sans-serif;
+    --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+    --font-urbanist: "Urbanist", sans-serif;
+}
+
+:root {
+    --page-bg: #ffffff;
+    --text-color: #0f172a;
+    --card-bg: #f1f5f9;
+}
+
+.dark {
+    --page-bg: #020617;
+    --text-color: #ffffff;
+    --card-bg: #1e293b;
+}
+
+@media (max-width: 350px) {
+    .watchlist-label {
+        display: none;
+    }
+}
+</style>
+
+</head>
+<body>
+     <footer class="w-full bg-[#102d50] flex lg:flex-row flex-col  md:flex-row justify-between px-2.5 py-2.5 mx-auto relative mt-5 ">
+    <div class="flex lg:flex-row md:flex-row flex-col lg:gap-20 gap-5 items-center lg:mx-0 mx-auto justify-between ">
+        <div class="flex lg:flex-row  md:flex-row  flex-col items-center gap-2.5">
+           <i class="fa-brands fa-bitcoin bg-[#fea51a] text-white rounded-[50%] lg:text-4xl text-xl py-1.25"></i>  
+           <div>
+            <h4 class="text-white text-xl font-bold font-raleway text-center lg:text-left">Crypto Market Tracker</h4>
+        <p class="text-white  font-plus-jakarta sans text-center lg:text-left">Track. Explore. Save</p>
+           </div>
+        </div>
+ <ul class="flex lg:flex-row  md:flex-row flex-col gap-4 lg:mx-0 mx-auto text-center lg:text-left text-white text-2xl font-raleway lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="watchlist.html">Watchlist</a></li>
+    <li><a href="about.html">About</a></li>
+ </ul>
+    </div>
+    <div class="flex items-center mx-auto py-2.5 lg:py-0 lg:mx-0 text-white gap-2.5 text-xl">
+      <i class="fa-brands fa-github"></i>  
+    <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-linkedin-in"></i>
+      <i class="fa-brands fa-youtube"></i>
+    </div>
+ 
+    
+    </footer>
+</body>
+<script src="/src/components/footer.js"></script>
+</html>

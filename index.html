@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital@1&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Home</title>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-raleway: "Raleway", sans-serif;
+    --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+    --font-urbanist: "Urbanist", sans-serif;
+}
+
+:root {
+    --page-bg: #ffffff;
+    --text-color: #0f172a;
+    --card-bg: #f1f5f9;
+}
+
+.dark {
+    --page-bg: #020617;
+    --text-color: #ffffff;
+    --card-bg: #1e293b;
+}
+
+@media (max-width: 350px) {
+    .watchlist-label {
+        display: none;
+    }
+}
+</style>
+
+</head>
+<body class="bg-[var(--page-bg)] text-[var(--text-color)]">
+    <!--Header-->
+    <header class="w-full bg-[#0b2441] px-2.5 lg:py-2.5 py-2.5 flex flex-col lg:flex-row justify-between items-center sticky top-0 z-50">
+    <!--mobile Bars-->
+ <div class="lg:hidden flex  justify-end w-full py-1.25 absolute right-2.5">
+
+ <i class="fa-solid fa-bars text-white text-4xl"></i>
+</div>
+
+
+
+
+        <div class="flex lg:gap-20 gap-5 items-center">
+ <div class=" flex lg:flex-row flex-col w-full items-center gap-2.5">
+    <i class="fa-brands fa-bitcoin  bg-[#fea51a] text-white rounded-[50%] lg:text-4xl text-2xl py-1.25"></i>
+    <div>
+        <h4 class="text-white text-xl font-bold font-raleway">Crypto Market Tracker</h4>
+        <p class="text-white  font-plus-jakarta sans lg:text-left text-center">Track. Explore. Save</p>
+    </div>
+   
+ </div>
+ <ul class="hidden lg:flex gap-5 text-white text-2xl font-raleway">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="watchlist.html">Watchlist</a></li>
+    <li><a href="about.html">About</a></li>
+ </ul>
+
+        </div>   
+        <div class="lg:flex-row flex flex-col gap-5 items-center py-2.5 w-full lg:w-auto">
+            <input type="text" id="SearchInput" placeholder="Search coins..." class="text-white lg:w-80 py-1.25 rounded-[20px] outline-0 border border-[#2e4664] px-2.5 w-[90%]">
+        <button class="flex items-center justify-center gap-2 bg-[#0a77fd] w-25 px-1.25 py-1.25 rounded-[20px] text-white" id="refreshbtn"><i class="fa-solid fa-rotate"></i>Refresh</button>
+    <div class="flex gap-2.5 bg-[#0b2341] py-1.25 rounded-[5px]">
+        <i class="fa-solid fa-sun text-white" id="lightMode"></i>
+        <i class="fa-solid fa-moon text-[#41546d]" id="darkMode"></i>
+    </div>   
+    </div>
+
+    </header>
+
+    <section class="w-full">
+    <div class="max-w-292.5">
+       <div class=" flex  lg:flex-row flex-col lg:mx-0  max-[640px]:mx-auto sm:mx-auto  justify-between px-7.5 py-2.5"> 
+       <div class="max-[640px]:mx-auto lg:mx-0">
+       <h4 class="font-bold text-2xl lg:text-left max-[640px]:text-center sm:text-center sm:text-3xl sm:py-2.5 md:text-3xl font-raleway">Top 20 Cryptocurrencies</h4> 
+       <p class="font-plus-jakarta lg:text-left max-[640px]:text-center max-[640px]:text-xl sm:text-center sm:text-2xl md:py-2.5 sm:py-2.5">Live prices,24h change and market cap</p>
+       </div> 
+       <div class="flex max-[640px]:flex-col items-center gap-5 sm:py-2.5">
+        <div class="flex lg:flex-row  sm:mx-auto max-[640px]:flex-col py-2.5 items-center">
+        <p class="max-[640px]:text-2xl font-raleway max-[640px]:py-2.5 sm:px-2.5 sm:text-2xl  md:text-3xl font-semibold">Sort by :</p>
+        <select name="" id="Sort" class="dark:bg-slate-900 text-center lg:text-left font-plus-jakarta-sans">
+      <option value="market_cap">Market Cap</option>
+      <option value="price_high">Price:High to Low</option>
+      <option value="price_low">Price:Low to High</option>
+      <option value="change_high">24h Change:High to Low</option>
+      <option value="name">Name:A-Z</option>
+        </select>
+        </div>
+        <div class="flex lg:flex-row  max-[640px]:flex-col items-center">
+        <span class="max-[640px]:text-2xl max-[640px]:py-2.5 font-raleway sm:px-1.25 font-semibold sm:text-2xl md:text-3xl">
+            filter :
+        </span>
+        <select name="" id="filter" class="dark:bg-slate-900 text-center lg:text-left sm:text-2xl">
+         <option value="all">All</option>
+         <option value="gainers">Gainers</option>
+         <option value="losers">Losers</option>
+         <option value="stablecoins">StableCoins</option>
+        </select>
+        </div>
+       </div>
+       </div>
+    </div>
+ 
+    <!--table container-->
+    <div class="w-full  overflow-x-auto">
+        <table class="w-full min-w-225 text-left border-collapse mt-5">
+          <thead class="bg-slate-400 dark:bg-slate-800">
+            <tr>
+                <th class="px-5 py-4">#</th>
+                <th  class="px-5 py-4 sticky left-0 z-20 bg-slate-400 dark:bg-slate-800">Coin</th>
+                <th class="px-5 py-4">Price</th>
+                <th class="px-5 py-4 whitespace-nowrap">24 Change</th>
+                <th class="px-5 py-4">Market Cap</th>
+                <th class="px-5 py-4">Volume(24h)</th>
+                <th class="px-5 py-4">Action</th>
+                <th class="px-5 py-4"></th>
+            </tr>
+          </thead>  
+          <tbody id="CryptoTable">
+       
+          </tbody>
+        </table>
+    </div>
+<!--table footer-->
+    <div class="flex justify-between px-2.5 py-2.5">
+<p class="text-xl text-slate-500" id="pageInfo">Showing 1-10 of 20  coins</p>
+<div class="flex items-center gap-2">
+    <button class="px-1  border rounded disabled:opacity-40" id="prevPage"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="px-2 text-white border rounded bg-blue-600" id="page1">1</button>
+    <button class="px-2  border rounded" id="page2">2</button>
+    <button class="px-1 border rounded" id="nextPage"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+    </div>
+
+    </section>
+
+    <section class="w-full bg-white mt-5">
+        <div class="max-w-292.5  flex justify-center mx-auto">
+        <div class="basis-[90%] mx-auto  border border-blue-800 px-5 py-2.5 text-center hidden" id="loading">
+            <i class="fa-solid fa-spinner text-blue-600 text-center block mx-auto py-2.5 text-4xl"></i>
+            <h4 class="text-center font-bold py-2.5 text-xl">Loading</h4>
+            <p class="text-center text-[#7a92b7] text-xl">Fetching latest market data </p>
+        </div>
+           <div class="basis-[90%] mx-auto  border border-blue-800 px-5 py-2.5 text-center hidden" id="error">
+          <i class="fa-solid fa-triangle-exclamation text-red-600 text-4xl"></i>
+            <h4 class="text-center font-bold py-2.5 text-xl">Error</h4>
+            <p class="text-center text-[#7a92b7] text-xl">Failed to fetch data please try again</p>
+            <button class="bg-blue-600 text-white w-[50%] rounded-[20px] px-2.5 py-1.25 mt-4 font-bold" id="retrybtn">Retry</button>
+        </div>
+            <div class="basis-[90%] mx-auto  border border-blue-800 px-5 py-2.5 text-center hidden" id="empty">
+           <i class="fa-solid fa-magnifying-glass text-[#415c87] text-4xl"></i>
+            <h4 class="text-center font-bold py-2.5 text-xl">No results found</h4>
+            <p class="text-center text-[#7a92b7] text-xl">Try a different search term</p>
+        </div>
+        </div>
+    </section>
+
+    <footer class="w-full bg-[#102d50] flex lg:flex-row flex-col  md:flex-row justify-between px-2.5 py-2.5 mx-auto relative mt-5 ">
+    <div class="flex lg:flex-row md:flex-row flex-col lg:gap-20 gap-5 items-center lg:mx-0 mx-auto justify-between ">
+        <div class="flex lg:flex-row  md:flex-row  flex-col items-center gap-2.5">
+           <i class="fa-brands fa-bitcoin bg-[#fea51a] text-white rounded-[50%] lg:text-4xl text-xl py-1.25"></i>  
+           <div>
+            <h4 class="text-white text-xl font-bold font-raleway text-center lg:text-left">Crypto Market Tracker</h4>
+        <p class="text-white  font-plus-jakarta sans text-center lg:text-left">Track. Explore. Save</p>
+           </div>
+        </div>
+ <ul class="flex lg:flex-row  md:flex-row flex-col gap-4 lg:mx-0 mx-auto text-center lg:text-left text-white text-2xl font-raleway lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="watchlist.html">Watchlist</a></li>
+    <li><a href="about.html">About</a></li>
+ </ul>
+    </div>
+    <div class="flex items-center mx-auto py-2.5 lg:py-0 lg:mx-0 text-white gap-2.5 text-xl">
+      <i class="fa-brands fa-github"></i>  
+    <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-linkedin-in"></i>
+      <i class="fa-brands fa-youtube"></i>
+    </div>
+ 
+    
+    </footer>
+    
+</body>
+<script src="script.js"></script>
+</html>

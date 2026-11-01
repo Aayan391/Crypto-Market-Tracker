@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital@1&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Details</title>
+    <style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-raleway: "Raleway", sans-serif;
+    --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+    --font-urbanist: "Urbanist", sans-serif;
+}
+
+:root {
+    --page-bg: #ffffff;
+    --text-color: #0f172a;
+    --card-bg: #f1f5f9;
+}
+
+.dark {
+    --page-bg: #020617;
+    --text-color: #ffffff;
+    --card-bg: #1e293b;
+}
+
+@media (max-width: 350px) {
+    .watchlist-label {
+        display: none;
+    }
+}
+</style>
+</head>
+<body class="bg-slate-50 text-[#102d50]">
+
+    <!-- Header -->
+    <header class="w-full whitespace-nowrap bg-[#0b2441] px-5 py-3 flex justify-between items-center sticky top-0 z-20">
+
+        <a href="index.html"
+            class="flex items-center gap-2 text-white text-sm md:text-base">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Home
+        </a>
+
+        <button id="watchlistBtn"
+            class="bg-blue-600 hover:bg-blue-700 shrink-0 text-white px-3 py-2 text-sm rounded-[20px] ">
+            <i class="fa-regular fa-star"></i>
+           <span class="hidden [@media(min-width:351px)]:inline">Add to Watchlist</span>
+
+        </button>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+
+        <!-- Coin Information + Market Stats -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-6 mt-4">
+
+            <!-- Coin Information Card -->
+            <div class=" border border-slate-200 rounded-xl p-5  shadow-sm">
+
+                <!-- Coin Name and Logo -->
+                <div class="flex items-center gap-3 mb-5">
+
+                    <img id="coinImage"
+                        src="/src/images/Screenshot 2026-10-25 080708.png"
+                        alt="Coin Logo"
+                        class="w-12 h-12 rounded-full">
+
+                    <div>
+                        <h1 id="coinName" class="text-2xl font-bold">
+                            Bitcoin
+                            <span id="coinSymbol"
+                                class="text-base text-slate-500">(BTC)</span>
+                        </h1>
+
+                        <p class="text-sm text-slate-500">
+                            Cryptocurrency
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Price -->
+                <p id="coinPrice" class="text-3xl font-bold mb-2">
+                    $67,432.21
+                </p>
+
+                <p id="coinChange"
+                    class="text-sm font-semibold text-green-600 mb-6">
+                    <i class="fa-solid fa-caret-up"></i>
+                    2.34% (24h)
+                </p>
+
+
+                <!-- Coin Links -->
+                <div class="flex flex-wrap gap-5 text-sm mb-6">
+
+                    <a id="websiteLink" href="#"
+                        class="text-blue-600 hover:underline">
+                        <i class="fa-solid fa-globe mr-1"></i>
+                        Website
+                    </a>
+
+                    <a id="explorerLink" href="#"
+                        class="text-blue-600 hover:underline">
+                        <i class="fa-solid fa-magnifying-glass mr-1"></i>
+                        Explorer
+                    </a>
+
+                    <a id="communityLink" href="#"
+                        class="text-blue-600 hover:underline">
+                        <i class="fa-solid fa-users mr-1"></i>
+                        Community
+                    </a>
+
+                </div>
+
+
+                <!-- Description -->
+                <div>
+                    <h2 class="font-bold mb-2">
+                        About <span id="descriptionCoinName">Bitcoin</span>
+                    </h2>
+
+                    <p id="coinDescription"
+                        class="text-sm text-slate-600 leading-6">
+                        Coin description will appear here after API integration.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Market Statistics -->
+            <div class=" border border-slate-200 rounded-xl p-5 shadow-sm">
+
+                <h2 class="text-lg font-bold mb-4">
+                    Market Stats
+                </h2>
+
+                <div class="divide-y divide-slate-100">
+
+                    <div class="flex justify-between items-center gap-3 py-3">
+                        <span class="text-sm text-slate-500">Market Cap</span>
+                        <span id="marketCap" class="font-semibold text-sm">--</span>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-3 py-3">
+                        <span class="text-sm text-slate-500">24h Volume</span>
+                        <span id="volume" class="font-semibold text-sm">--</span>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-3 py-3">
+                        <span class="text-sm text-slate-500">Circulating Supply</span>
+                        <span id="circulatingSupply" class="font-semibold text-sm">--</span>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-3 py-3">
+                        <span class="text-sm text-slate-500">Total Supply</span>
+                        <span id="totalSupply" class="font-semibold text-sm">--</span>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-3 py-3">
+                        <span class="text-sm text-slate-500">24h High</span>
+                        <span id="high24h" class="font-semibold text-sm">--</span>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-3 py-3">
+                        <span class="text-sm text-slate-500">24h Low</span>
+                        <span id="low24h" class="font-semibold text-sm">--</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Price Chart + Links -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+
+            <!-- Price Chart -->
+            <div class="lg:col-span-2 bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+
+                <div class="flex flex-wrap justify-between items-center gap-3 mb-5">
+
+                    <h2 id="chartTitle" class="text-lg font-bold">
+                        Price Chart (7D)
+                    </h2>
+
+                    <!-- Chart Time Filters -->
+                    <div class="flex gap-2">
+
+                        <button data-days="7"
+                            class="chart-range px-3 py-1 rounded-md bg-blue-600 text-white text-sm">
+                            7D
+                        </button>
+
+                        <button data-days="30"
+                            class="chart-range px-3 py-1 rounded-md bg-slate-100 text-sm">
+                            1M
+                        </button>
+
+                        <button data-days="365"
+                            class="chart-range px-3 py-1 rounded-md bg-slate-100 text-sm">
+                            1Y
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Chart Placeholder -->
+             <div class="w-full h-64">
+    <canvas id="priceChart"></canvas>
+</div>
+
+            </div>
+
+
+            <!-- Links Card -->
+            <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+
+                <h2 class="text-lg font-bold mb-5">
+                    Links
+                </h2>
+
+                <div class="flex flex-col gap-5 text-sm">
+
+                    <a id="websiteLinkBottom" href="#"
+                        class="text-blue-600 hover:underline">
+                        <i class="fa-solid fa-globe mr-2"></i>
+                        Website
+                    </a>
+
+                    <a id="explorerLinkBottom" href="#"
+                        class="text-blue-600 hover:underline">
+                        <i class="fa-solid fa-magnifying-glass mr-2"></i>
+                        Explorer
+                    </a>
+
+                    <a id="communityLinkBottom" href="#"
+                        class="text-blue-600 hover:underline">
+                        <i class="fa-solid fa-users mr-2"></i>
+                        Community
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#102d50] text-white text-center px-4 py-5 mt-8">
+
+        <p class="text-sm">
+            © 2026 Crypto Market Tracker
+        </p>
+
+    </footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="details.js"></script>
+
+</html>
