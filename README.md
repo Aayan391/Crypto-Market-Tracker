@@ -76,6 +76,7 @@ The project uses browser LocalStorage to save users' watchlist selections. Saved
 
 The website is designed to provide a smooth experience across different screen sizes, including desktops, tablets, and mobile devices.
 
+Live link:https://crypto-market-tracker-chi.vercel.app/
 
 ## 👨‍💻 Author
 
