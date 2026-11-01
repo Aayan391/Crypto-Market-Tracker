@@ -27,8 +27,6 @@ Crypto Market Tracker is a responsive cryptocurrency tracking website that allow
 - LocalStorage
 
 ## 📂 Project Structure
-
-```text
 Crypto-Market-Tracker/
 │
 ├── index.html
@@ -47,7 +45,7 @@ Crypto-Market-Tracker/
 │   └── footer.js
 │
 └── README.md
-```
+
 
 ## 🔌 API Used
 
@@ -60,12 +58,7 @@ This project uses the **CoinGecko API** to retrieve cryptocurrency market data, 
 Follow these steps to run the project locally:
 
 **1. Clone the repository**
-
-```bash
-git clone YOUR_REPOSITORY_URL
-```
-
-
+https://github.com/Aayan391/Crypto-Market-Tracker
 
 **2. Open the project**
 
@@ -83,12 +76,9 @@ The project uses browser LocalStorage to save users' watchlist selections. Saved
 
 The website is designed to provide a smooth experience across different screen sizes, including desktops, tablets, and mobile devices.
 
+
 ## 👨‍💻 Author
 
 Muhammad Aayan
-
-- GitHub: YOUR_GITHUB_PROFILE_URL
-
----
 
 ⭐ If you like this project, don't forget to give the repository a star!
